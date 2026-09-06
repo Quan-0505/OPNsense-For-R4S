@@ -55,8 +55,8 @@ PCIe 口的 RTL8111H（`re0`）不出现（[matheusber issue #5](https://github.
 ## 文件与校验
 
 **v2（推荐，双网口修复版，含 u-boot 2020.07）：**
-- 文件：`OPNsense-26.7.3-fixed-uboot2020-R4S.img.xz`（1,315,668,696 B ≈ 1.23 GB）
-- SHA256：`ab724fcca797eb972403f5297bd03ec46574b874fa622d7308fdbe8f51a12b55`
+- 文件：`OPNsense-26.7.3-fixed-uboot2020-native-driver-R4S.img.xz`（1,315,668,508 B ≈ 1.23 GB，v2.1：在 v2 基础上改烘焙原生 iflib if_re、移除 vendor 预载）
+- SHA256：`2663f1068716f2abe15ac13d2fe45dffce8a27ffc75f345064f544aa360644e1`
 - 内容 = v1 全部修复 + u-boot 区替换为 22.7 的 U-Boot 2020.07（扇区 64–32767）；分区表/文件系统未动
 - 真机验证（2026-09-06）：re0 UP（1000baseT FD）、vendor 驱动 1.98.00 生效、无 Gen1 训练超时、系统正常引导
 
