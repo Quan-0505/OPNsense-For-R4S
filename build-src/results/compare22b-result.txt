@@ -1,0 +1,42 @@
+Warning: Permanently added '[127.0.0.1]:2222' (ED25519) to the list of known hosts.
+### == partition maps ==
+=>     40  6291376  vtbd1  GPT  (3.0G)
+       40    32728         - free -  (16M)
+    32768   102400      1  efi  (50M)
+   135168  6156160      2  freebsd-ufs  (2.9G)
+  6291328       88         - free -  (44K)
+
+=>     63  8388545  vtbd2  MBR  (4.0G)
+       63    32705         - free -  (16M)
+    32768    65536      1  fat32lba  [active]  (32M)
+    98304  8290304      2  freebsd  (4.0G)
+
+ROOT: /dev/vtbd1p2 -> /mnt/a
+ROOT: /dev/vtbd2s2 -> /mnt/b
+##### IMAGE a
+kernel: 15928000 bytes
+  'Rockchip PCIe controller': 1
+  'Gen1 link training': 1
+  'OFW PCI bus': 0
+  'pci_host_generic': 8
+  boot layout:
+beastie.4th boot1.efi brand-fbsd.4th brand.4th check-password.4th color.4th defaults delay.4th dtb efi efi.4th entropy firmware fonts frames.4th gptboot.efi images kernel loader.4th loader.conf loader.conf.d loader.efi loader.rc loader_4th.efi loader_lua.efi loader_simp.efi logo-beastie.4th logo-beastiebw.4th logo-fbsdbw.4th logo-orb.4th logo-orbbw.4th lua menu-commands.4th menu.4th menu.rc menusets.4th modules screen.4th shortcuts.4th support.4th uboot version.4th zfs 
+  dtb r4s/rk3399:
+  loader.conf pcie-ish:
+##### IMAGE b
+kernel: 18944368 bytes
+  'Rockchip PCIe controller': 1
+  'Gen1 link training': 1
+  'OFW PCI bus': 1
+  'pci_host_generic': 8
+  boot layout:
+beastie.4th boot1.efi brand-fbsd.4th brand.4th check-password.4th color.4th defaults delay.4th device.hints dtb efi efi.4th entropy firmware fonts frames.4th gptboot.efi images kernel loader.4th loader.conf loader.conf.d loader.conf.local loader.efi loader.help.efi loader.help.kboot loader.kboot loader.rc loader_4th.efi loader_lua.efi loader_simp.efi logo-beastie.4th logo-beastiebw.4th logo-fbsdbw.4th logo-orb.4th logo-orbbw.4th lua menu-commands.4th menu.4th menu.rc menusets.4th modules msdos screen.4th shortcuts.4th support.4th uboot version.4th zfs 
+  dtb r4s/rk3399:
+/mnt/b/boot/dtb/rockchip/rk3399-nanopi-r4s.dtb
+  loader.conf pcie-ish:
+### == u-boot strings ==
+vtbd1:
+U-Boot 2020.07 (Aug 19 2022 - 14:14:54 +0300)
+vtbd2:
+U-Boot 2025.10 (Aug 01 2026 - 14:40:55 +0000)
+CMP22B_DONE
