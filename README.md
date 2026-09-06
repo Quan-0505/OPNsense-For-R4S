@@ -2,7 +2,7 @@
 
 # OPNsense for NanoPi R4S
 
-<p><strong>让 NanoPi R4S 稳定跑满 OPNsense 26.7.3 的实战修复与调优档案</strong></p>
+<p><strong>让 NanoPi R4S 稳定跑 OPNsense 26.7.3 的实战修复与调优档案</strong></p>
 
 <p>
   <a href="https://github.com/Quan-0505/OPNsense-For-R4S/releases"><img src="https://img.shields.io/github/v/release/Quan-0505/OPNsense-For-R4S?style=for-the-badge" alt="Release" /></a>
