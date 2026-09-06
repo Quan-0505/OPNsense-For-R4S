@@ -23,17 +23,17 @@
 
 ```text
 下载：https://github.com/Quan-0505/OPNsense-For-R4S/releases
-文件：OPNsense-26.7.3-fixed-uboot2020-R4S.img.xz
-SHA256：ab724fcca797eb972403f5297bd03ec46574b874fa622d7308fdbe8f51a12b55
+文件：OPNsense-26.7.3-fixed-uboot2020-native-driver-R4S.img.xz
+SHA256：2663f1068716f2abe15ac13d2fe45dffce8a27ffc75f345064f544aa360644e1
 ```
 
 ```bash
 # 校验并解压（Windows 用 7-Zip）
-sha256sum OPNsense-26.7.3-fixed-uboot2020-R4S.img.xz
-unxz OPNsense-26.7.3-fixed-uboot2020-R4S.img.xz
+sha256sum OPNsense-26.7.3-fixed-uboot2020-native-driver-R4S.img.xz
+unxz OPNsense-26.7.3-fixed-uboot2020-native-driver-R4S.img.xz
 
 # 写入 ≥8GB TF 卡（balenaEtcher / Rufus；或 Linux:）
-dd if=OPNsense-26.7.3-fixed-uboot2020-R4S.img of=/dev/sdX bs=1m conv=sync
+dd if=OPNsense-26.7.3-fixed-uboot2020-native-driver-R4S.img of=/dev/sdX bs=1m conv=sync
 ```
 
 启动后默认 `https://192.168.1.1`（root / opnsense，向导中改密）。完整部署与验证流程见
@@ -73,7 +73,7 @@ dd if=OPNsense-26.7.3-fixed-uboot2020-R4S.img of=/dev/sdX bs=1m conv=sync
 对 RK3399 PCIe PHY/时钟的初始化状态。对应上游：[FreeBSD-arm 2022 年同报错](https://marc.info/?l=freebsd-arm&m=164487492409386&w=1)、
 [matheusber issue #5](https://github.com/matheusber/opnsense/issues/5)。
 
-**修复产物**：`OPNsense-26.7.3-fixed-uboot2020-R4S.img.xz`（本仓库 Releases）。
+**修复产物**：`OPNsense-26.7.3-fixed-uboot2020-native-driver-R4S.img.xz`（本仓库 Releases；u-boot 2020.07 + 原生 iflib if_re 驱动已烘焙，无 vendor 预载）。
 移植配方（两镜像分区均始于 16 MiB，互换原始扇区即可）：
 
 ```bash
