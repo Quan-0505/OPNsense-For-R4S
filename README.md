@@ -144,9 +144,10 @@ OPNsense-For-R4S/
     └── OPNsense-26.7-R4S-deploy-guide.md  部署背景研究
 ```
 
-产物固件因超出 GitHub 单文件限制（100 MB）发布在
-[Releases](https://github.com/Quan-0505/OPNsense-For-R4S/releases)（≤2 GB/文件），
-可凭 `build-src` 脚本自行复现。
+固件成品（`OPNsense-26.7.3-fixed-uboot2020-native-driver-R4S.img.xz`，约 1.25 GB）超出
+Git 仓库 100 MB 的单文件限制，因此通过
+[Releases](https://github.com/Quan-0505/OPNsense-For-R4S/releases) 分发（Release 附件单文件上限 2 GiB）；
+全部过程可凭 `build-src/` 脚本复现。
 
 ---
 
