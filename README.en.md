@@ -55,7 +55,7 @@ deployment and verification procedure, see
 | Only one NIC on 26.7.x (RTL8111H disappears) | **u-boot version regression** (2025.10 PCIe link training times out, while 2020.07 is fine) | Image switched to u-boot 2020.07 (the v2 firmware in this repo) | [Dual-NIC Detection](#dual-nic-detection-bug) |
 | Intermittent NIC stalls, unstable web UI | Vendor Realtek 1.98 driver drops the link while idle | Reverted to the native FreeBSD iflib `if_re` | [Link-Drop Bug](#link-drop-bug) |
 | Speed test reaches only ~300 Mbps | CPU frequency locked at 600 MHz (powerd missing) | Enable `powerd` | [CPU Frequency Scaling](#cpu-frequency-scaling) |
-| Throughput around ~500 Mbps | Interface hardware settings not applied correctly | Enable "Hardware Settings: Override Global Settings" in the GUI | [Interface Hardware Settings](#interface-hardware-settings) |
+| Throughput around ~500 Mbps | Interface hardware settings not applied correctly | Enable "Hardware settings: Overwrite global settings" in the GUI | [Interface Hardware Settings](#interface-hardware-settings) |
 
 ---
 
@@ -109,9 +109,9 @@ sysrc powerd_flags="-a max"                       # performance mode (same measu
 
 ## Interface Hardware Settings
 
-GUI: Interfaces → WAN/LAN → **Hardware Settings: Override Global Settings** (`hw_settings_overwrite=1`).
+GUI: Interfaces → WAN/LAN → **Hardware settings: Overwrite global settings** (`hw_settings_overwrite=1`).
 OPNsense then re-applies the driver parameters according to each interface's capabilities (reconfiguring manually with
-`configctl` resets the unload parameters, so a proper save through the GUI is the right way). Once it takes effect,
+`configctl` resets the offload parameters, so a proper save through the GUI is the right way). Once it takes effect,
 `dwc0` has `RXCSUM,TXCSUM,VLAN_MTU,LINKSTATE,RXCSUM_IPV6,TXCSUM_IPV6`.
 
 ---
