@@ -15,6 +15,8 @@
 
 </div>
 
+**English** &nbsp;|&nbsp; **[简体中文](./README.md)**
+
 ---
 
 ## Quick Start
