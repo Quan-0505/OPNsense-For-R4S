@@ -24,17 +24,17 @@
 The finished firmware (with the u-boot 2020.07 fix included) has been published to GitHub Releases:
 
 ```text
-下载：https://github.com/Quan-0505/OPNsense-For-R4S/releases
-文件：OPNsense-26.7.3-fixed-uboot2020-native-driver-R4S.img.xz
-SHA256：2663f1068716f2abe15ac13d2fe45dffce8a27ffc75f345064f544aa360644e1
+Download: https://github.com/Quan-0505/OPNsense-For-R4S/releases
+File: OPNsense-26.7.3-fixed-uboot2020-native-driver-R4S.img.xz
+SHA256: 2663f1068716f2abe15ac13d2fe45dffce8a27ffc75f345064f544aa360644e1
 ```
 
 ```bash
-# 校验并解压（Windows 用 7-Zip）
+# verify and extract (use 7-Zip on Windows)
 sha256sum OPNsense-26.7.3-fixed-uboot2020-native-driver-R4S.img.xz
 unxz OPNsense-26.7.3-fixed-uboot2020-native-driver-R4S.img.xz
 
-# 写入 ≥8GB TF 卡（balenaEtcher / Rufus；或 Linux:）
+# write to a ≥8GB TF card (balenaEtcher / Rufus; or on Linux:)
 dd if=OPNsense-26.7.3-fixed-uboot2020-native-driver-R4S.img of=/dev/sdX bs=1m conv=sync
 ```
 
@@ -102,9 +102,9 @@ OPNsense ARM images do not run `powerd` by default → the RK3399's six cores ar
 is bottlenecked by the CPU.
 
 ```bash
-sysrc powerd_enable=YES && service powerd start   # 持久化启用
-sysrc powerd_flags="-a hadp"                      # 自适应（推荐）
-sysrc powerd_flags="-a max"                       # 性能模式（实测与 hadp 同吞吐）
+sysrc powerd_enable=YES && service powerd start   # enable persistently
+sysrc powerd_flags="-a hadp"                      # adaptive (recommended)
+sysrc powerd_flags="-a max"                       # performance mode (same measured throughput as hadp)
 ```
 
 ## Interface Hardware Settings
@@ -141,14 +141,14 @@ enlargement (the default 8 MB is enough; enlarging it causes more jitter instead
 
 ```text
 OPNsense-For-R4S/
-├── README.md                       本文件（问题/根因/修复/调优总览）
-└── build-src/                      编译与验证资产
-    ├── scripts/                    build0-3 编译流水线、m_uboot2020 移植、
-    │                               compare* 回归解剖、dl227 下载、
-    │                               inspect_img 镜像解析、patch_cpu_label 定制等
-    ├── results/                    22.7 vs 26.7 对比实验原始输出
-    ├── FIXED-BUILD-26.7.3-R4S.md   修复版构建清单与校验（v1/v2）
-    └── OPNsense-26.7-R4S-deploy-guide.md  部署背景研究
+├── README.md                       this file (problem / root cause / fix / tuning overview)
+└── build-src/                      build and verification assets
+    ├── scripts/                    build0-3 build pipeline, m_uboot2020 port,
+    │                               compare* regression analysis, dl227 download,
+    │                               inspect_img image parsing, patch_cpu_label customization, etc.
+    ├── results/                    22.7 vs 26.7 comparison experiment raw output
+    ├── FIXED-BUILD-26.7.3-R4S.md   fixed-build manifest and verification (v1/v2)
+    └── OPNsense-26.7-R4S-deploy-guide.md  deployment background research
 ```
 
 The finished firmware (`OPNsense-26.7.3-fixed-uboot2020-native-driver-R4S.img.xz`, about 1.25 GB) exceeds Git's
